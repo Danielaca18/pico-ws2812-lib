@@ -1,0 +1,17 @@
+.program ws2812
+.side_set 1
+
+; define t1 as the short period and t2 as the long period
+.define public T1  4
+
+.wrap_target
+
+
+loop:
+out x, 1            side 0  [T1 - 1]
+jmp !x, send_zero   side 1  [T1 - 1]
+send_one:
+jmp loop            side 1  [T1 - 1]
+send_zero:
+nop                 side 0  [T1 - 1]
+.wrap

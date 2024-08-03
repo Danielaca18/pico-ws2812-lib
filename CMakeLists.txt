@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.14)
 
 # Set project and target name
-set(PROJECT_NAME "Template")
-set(TARGET_NAME "Template")
-set(LIBRARY_NAME "Template-Lib")
+set(PROJECT_NAME "pico_ws2812")
+set(TARGET_NAME "pico_ws2812")
+set(LIBRARY_NAME "pico_ws2812_lib")
 
 # Include project configs
 include(${CMAKE_SOURCE_DIR}/cmake/import_config.cmake)
@@ -27,10 +27,12 @@ if (NOT TARGET ${LIBRARY_NAME} AND NOT TARGET ${TARGET_NAME})
     add_library(${LIBRARY_NAME} ${LIB_SRC} ${INC})
     target_link_libraries(${LIBRARY_NAME} pico_stdlib)
     target_include_directories(${LIBRARY_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/inc)
+    pico_generate_pio_header(${LIBRARY_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/src/ws2812.pio)
 
     # Setup executable
     add_executable(${TARGET_NAME} ${SRC} ${INC})
-    target_link_libraries(${TARGET_NAME} pico_stdlib pico_unique_id)
+    target_link_libraries(${TARGET_NAME} pico_stdlib bootsel_btnlib)
+    pico_generate_pio_header(${TARGET_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/src/ws2812.pio)
 
     # Add include directories
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
