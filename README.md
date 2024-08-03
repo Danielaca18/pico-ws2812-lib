@@ -1,34 +1,24 @@
-# Repo Template
+# Pico WS2812 Library
 
-This project is a template for creating new repositories. It includes a template README file, basic directory structure and a `.gitignore` file. This template is intended to be used as a starting point for any of my new projects.
+A lightweight library for the Raspberry Pi Pico C SDK to control WS2812 LEDs.
 
 ## ✨ Features
-- Feature 1
-- Feature 2
-- Feature 3
+- Simple interface to control WS2812 LEDs.
+- Utilizes PIO modules.
 
 ## 🛠️ Setup
 
-### 1. Clone the Repository
+### 1. Add Repository as a Submodule
 ```bash
-git clone https://github.com/Danielaca18/repo-template.git
-cd repo-template
+git submodule add https://github.com/Danielaca18/pico-ws2812-lib.git
 ```
 
-### 2. Install Prerequisites
-- Program Name: Small Program Description 
-
-### 3. Setup the Project
-- Describe the steps to setup the project.
-
-### 4. Build the Project
-- Build the project using the following commands:
-    ```bash
-    mkdir build
-    cd build
-    cmake -G "Ninja" ..
-    ninja
-    ```
+### 2. Include the Library
+Include the library in your project by adding the following line to your project cmake:
+```cmake
+add_subdirectory(pico-ws2812-lib)
+target_link_libraries(your_project pico-ws2812-lib)
+```
 
 ## 💼 License
 This project is licensed under the [MIT License](LICENSE), which is a permissive open-source license that allows you to use, modify, and distribute the code for both commercial and non-commercial purposes. You can find the full text of the license in the [LICENSE](LICENSE) file.
