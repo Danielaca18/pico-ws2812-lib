@@ -2,17 +2,17 @@
 
 A lightweight C library for the Raspberry Pi Pico to control WS2812 LEDs.
 
-## ✨ Features
-- Simple interface to control WS2812 LEDs.
-- Utilizes PIO modules.
+## 📚 Functions
+- **ws2812_init**: Initializes a WS2812 LED struct.
+- **ws2812_write**: Writes a color value to a WS2812 LED.
+- **ws2812_program_init**: Initializes a PIO state machine to send WS2812 rgb signals.
+- **rgb_to_grb**: Converts RGB values to GRB format.
 
 ## 🛠️ Setup
-
 ### 1. Add Repository as a Submodule
 ```bash
 git submodule add https://github.com/Danielaca18/pico-ws2812-lib.git
 ```
-
 ### 2. Include the Library
 Include the library in your project by adding the following line to your project cmake:
 ```cmake
