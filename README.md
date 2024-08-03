@@ -1,6 +1,6 @@
 # Pico WS2812 Library
 
-A lightweight library for the Raspberry Pi Pico C SDK to control WS2812 LEDs.
+A lightweight C library for the Raspberry Pi Pico to control WS2812 LEDs.
 
 ## ✨ Features
 - Simple interface to control WS2812 LEDs.
