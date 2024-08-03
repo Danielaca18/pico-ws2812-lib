@@ -1,5 +1,19 @@
-#include "ws2812.h"
+/**
+ * @file ws2812.c
+ * @author Daniel Castro (dcastro@ualberta.ca)
+ * @brief Source file for WS2812 LED control.
+ * @version 0.1
+ * @date 2024-08-02
+ * 
+ * This file contains the function definitions
+ * for controlling WS2812 LEDs using the PIO capabilities of the
+ * Raspberry Pi Pico.
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 
+#include "ws2812.h"
 
 void ws2812_program_init(PIO pio, uint sm, uint offset, uint pin, uint freq, uint rgb_bits) {
     pio_sm_config config = ws2812_program_get_default_config(offset);

@@ -1,3 +1,17 @@
+/**
+ * @file test.c
+ * @author Daniel Castro (dcastro@ualberta.ca)
+ * @brief Test file for WS2812 LED control.
+ * @version 0.1
+ * @date 2024-08-02
+ * 
+ * This file contains a main function that runs various tests on the
+ * WS2812 LED control functions.
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "ws2812.h"
 
 int main() {

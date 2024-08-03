@@ -1,3 +1,18 @@
+/**
+ * @file ws2812.h
+ * @author Daniel Castro (dcastro@ualberta.ca)
+ * @brief Header file for WS2812 LED control.
+ * @version 0.1
+ * @date 2024-08-02
+ * 
+ * This file contains the function prototypes and type definitions
+ * for controlling WS2812 LEDs using the PIO capabilities of the
+ * Raspberry Pi Pico.
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #ifndef WS2812_H
 #define WS2812_H
 
@@ -13,13 +28,17 @@
 #define WS2812_PIN      23
 #define WS2812_FREQ     800000
 
+/**
+ * @brief Struct representing WS2812 LED.
+ * 
+ */
 typedef struct {
-    PIO pio;
-    uint sm;
+    PIO pio;    /**< Struct representing specific PIO module. */
+    uint sm;    /**< Index of state machine. */
 } ws2812;
 
 /**
- * @brief Initializes a PIO state machine to send ws2812 rgb signals
+ * @brief Initializes a PIO state machine to send ws2812 rgb signals.
  * 
  * @param pio The PIO struct to initialize.
  * @param sm The index of the state machine to initialize.
